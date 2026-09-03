@@ -31,11 +31,21 @@ python3 -m http.server 8000
 
 pa otvoriti `http://localhost:8000/`.
 
+## Gate (ulazna stranica)
+
+`gate.html` je trenutno samo prazan držač s gumbom Enter. Zamijeni ga svojom
+stranicom (ime datoteke mora ostati `gate.html`). Jedino što tvoj gate mora
+napraviti u trenutku kad pušta korisnika unutra je izvršiti ovu liniju:
+
+```javascript
+window.parent.postMessage({ type: '35xw-unlock' }, '*');
+```
+
+Glavna stranica tada sama ugasi gate i pokrene aplikaciju.
+
 ## Napomena o oporavku
 
 `index.html`, `styles.css` i `script.js` su oporavljene originalne datoteke.
-`gate.html` je rekonstruiran prema tome kako ga `script.js` očekuje (šalje
-poruku `35xw-unlock` glavnoj stranici nakon točne lozinke).
 
 `index.html` još referencira i datoteku `35xw 2FA.exe` (download u kartici
 2FA). Taj binarni fajl nije oporavljen; dok se ne doda u repozitorij, taj
