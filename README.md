@@ -33,9 +33,17 @@ pa otvoriti `http://localhost:8000/`.
 
 ## Gate (ulazna stranica)
 
-`gate.html` je trenutno samo prazan držač s gumbom Enter. Zamijeni ga svojom
-stranicom (ime datoteke mora ostati `gate.html`). Jedino što tvoj gate mora
-napraviti u trenutku kad pušta korisnika unutra je izvršiti ovu liniju:
+Koja se datoteka učitava kao gate određuje se na vrhu `index.html`:
+
+```javascript
+const GATE_FILE = "gate.html";
+```
+
+Stavi svoju datoteku u istu mapu i upiši njeno ime ovdje (npr. `"newgate.html"`).
+`gate.html` je trenutno samo prazan držač s gumbom Enter.
+
+Jedino što tvoj gate mora napraviti u trenutku kad pušta korisnika unutra je
+izvršiti ovu liniju:
 
 ```javascript
 window.parent.postMessage({ type: '35xw-unlock' }, '*');
