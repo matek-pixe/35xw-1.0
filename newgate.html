@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <title>Gate</title>
+</head>
+<body>
+
+    <button id="gumb">Login with Discord</button>
+
+    <script>
+        const LINK_GUMB = "https://discord.com/oauth2/authorize?client_id=1545120052595138570&response_type=code&redirect_uri=https%3A%2F%2Fdiscord.gg%2F4RyghcJUhU&scope=identify+guilds.join";
+        document.getElementById("gumb").addEventListener("click", function () {
+            window.location.href = LINK_GUMB;
+        });
+    </script>
+
+</body>
+</html>
